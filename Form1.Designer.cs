@@ -32,30 +32,30 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblDateTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.txtGörevEkle = new System.Windows.Forms.RichTextBox();
+            this.listTamanlanan = new System.Windows.Forms.ListBox();
+            this.listEklenen = new System.Windows.Forms.ListBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSifirla = new System.Windows.Forms.Button();
+            this.btnGeriAl = new System.Windows.Forms.Button();
+            this.btnTamamlandi = new System.Windows.Forms.Button();
+            this.btnGorevSil = new System.Windows.Forms.Button();
+            this.btnGorevEkle = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.txtMetin = new System.Windows.Forms.TextBox();
+            this.txtSaat = new System.Windows.Forms.TextBox();
+            this.txtTarih = new System.Windows.Forms.TextBox();
+            this.bntSifirla = new System.Windows.Forms.Button();
+            this.btnAlarmKur = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblAlarmKur = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.notepad = new System.Windows.Forms.RichTextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -82,9 +82,9 @@
             this.fontDialog1 = new System.Windows.Forms.FontDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.listBox3 = new System.Windows.Forms.ListBox();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.listBoxHistory = new System.Windows.Forms.ListBox();
+            this.btnTumTemizle = new System.Windows.Forms.Button();
+            this.btnTemizle = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -108,17 +108,18 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label7
+            // lblDateTime
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(1139, 803);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(119, 40);
-            this.label7.TabIndex = 6;
-            this.label7.Text = "label7";
+            this.lblDateTime.AutoSize = true;
+            this.lblDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblDateTime.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblDateTime.ForeColor = System.Drawing.Color.White;
+            this.lblDateTime.Location = new System.Drawing.Point(1139, 803);
+            this.lblDateTime.Name = "lblDateTime";
+            this.lblDateTime.Size = new System.Drawing.Size(119, 40);
+            this.lblDateTime.TabIndex = 6;
+            this.lblDateTime.Text = "label7";
+            this.lblDateTime.Click += new System.EventHandler(this.lblDateTime_Click);
             // 
             // panel1
             // 
@@ -126,15 +127,15 @@
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.richTextBox1);
-            this.panel1.Controls.Add(this.listBox2);
-            this.panel1.Controls.Add(this.listBox1);
+            this.panel1.Controls.Add(this.txtGörevEkle);
+            this.panel1.Controls.Add(this.listTamanlanan);
+            this.panel1.Controls.Add(this.listEklenen);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnSifirla);
+            this.panel1.Controls.Add(this.btnGeriAl);
+            this.panel1.Controls.Add(this.btnTamamlandi);
+            this.panel1.Controls.Add(this.btnGorevSil);
+            this.panel1.Controls.Add(this.btnGorevEkle);
             this.panel1.Location = new System.Drawing.Point(0, 335);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(558, 462);
@@ -176,37 +177,37 @@
             this.label3.TabIndex = 14;
             this.label3.Text = "Eklenenler";
             // 
-            // richTextBox1
+            // txtGörevEkle
             // 
-            this.richTextBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.richTextBox1.Location = new System.Drawing.Point(12, 107);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(151, 146);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged_3);
+            this.txtGörevEkle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtGörevEkle.Location = new System.Drawing.Point(12, 107);
+            this.txtGörevEkle.Name = "txtGörevEkle";
+            this.txtGörevEkle.Size = new System.Drawing.Size(151, 146);
+            this.txtGörevEkle.TabIndex = 13;
+            this.txtGörevEkle.Text = "";
+            this.txtGörevEkle.TextChanged += new System.EventHandler(this.txtGörevEkle_TextChanged_3);
             // 
-            // listBox2
+            // listTamanlanan
             // 
-            this.listBox2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.ItemHeight = 24;
-            this.listBox2.Location = new System.Drawing.Point(368, 107);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(165, 268);
-            this.listBox2.TabIndex = 12;
-            this.listBox2.SelectedIndexChanged += new System.EventHandler(this.listBox2_SelectedIndexChanged_1);
+            this.listTamanlanan.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listTamanlanan.FormattingEnabled = true;
+            this.listTamanlanan.ItemHeight = 24;
+            this.listTamanlanan.Location = new System.Drawing.Point(368, 107);
+            this.listTamanlanan.Name = "listTamanlanan";
+            this.listTamanlanan.Size = new System.Drawing.Size(165, 268);
+            this.listTamanlanan.TabIndex = 12;
+            this.listTamanlanan.SelectedIndexChanged += new System.EventHandler(this.listTamamlanan_SelectedIndexChanged_1);
             // 
-            // listBox1
+            // listEklenen
             // 
-            this.listBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.ItemHeight = 24;
-            this.listBox1.Location = new System.Drawing.Point(179, 107);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(165, 268);
-            this.listBox1.TabIndex = 11;
-            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged_1);
+            this.listEklenen.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listEklenen.FormattingEnabled = true;
+            this.listEklenen.ItemHeight = 24;
+            this.listEklenen.Location = new System.Drawing.Point(179, 107);
+            this.listEklenen.Name = "listEklenen";
+            this.listEklenen.Size = new System.Drawing.Size(165, 268);
+            this.listEklenen.TabIndex = 11;
+            this.listEklenen.SelectedIndexChanged += new System.EventHandler(this.listEklenen_SelectedIndexChanged_1);
             // 
             // label2
             // 
@@ -221,136 +222,136 @@
             this.label2.Text = "Yapılacaklar Listesi";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // button5
+            // btnSifirla
             // 
-            this.button5.BackColor = System.Drawing.Color.Turquoise;
-            this.button5.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(12, 397);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(148, 40);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Sıfırla";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.btnSifirla.BackColor = System.Drawing.Color.Turquoise;
+            this.btnSifirla.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnSifirla.ForeColor = System.Drawing.Color.White;
+            this.btnSifirla.Location = new System.Drawing.Point(12, 397);
+            this.btnSifirla.Name = "btnSifirla";
+            this.btnSifirla.Size = new System.Drawing.Size(148, 40);
+            this.btnSifirla.TabIndex = 10;
+            this.btnSifirla.Text = "Sıfırla";
+            this.btnSifirla.UseVisualStyleBackColor = false;
+            this.btnSifirla.Click += new System.EventHandler(this.btnSifirla_Click);
             // 
-            // button4
+            // btnGeriAl
             // 
-            this.button4.BackColor = System.Drawing.Color.RoyalBlue;
-            this.button4.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(366, 397);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(167, 40);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Geri Al";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.btnGeriAl.BackColor = System.Drawing.Color.RoyalBlue;
+            this.btnGeriAl.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGeriAl.ForeColor = System.Drawing.Color.White;
+            this.btnGeriAl.Location = new System.Drawing.Point(366, 397);
+            this.btnGeriAl.Name = "btnGeriAl";
+            this.btnGeriAl.Size = new System.Drawing.Size(167, 40);
+            this.btnGeriAl.TabIndex = 9;
+            this.btnGeriAl.Text = "Geri Al";
+            this.btnGeriAl.UseVisualStyleBackColor = false;
+            this.btnGeriAl.Click += new System.EventHandler(this.btnGeriAl_Click);
             // 
-            // button3
+            // btnTamamlandi
             // 
-            this.button3.BackColor = System.Drawing.Color.SkyBlue;
-            this.button3.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(179, 397);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 40);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Tamamlandı";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnTamamlandi.BackColor = System.Drawing.Color.SkyBlue;
+            this.btnTamamlandi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTamamlandi.ForeColor = System.Drawing.Color.White;
+            this.btnTamamlandi.Location = new System.Drawing.Point(179, 397);
+            this.btnTamamlandi.Name = "btnTamamlandi";
+            this.btnTamamlandi.Size = new System.Drawing.Size(165, 40);
+            this.btnTamamlandi.TabIndex = 5;
+            this.btnTamamlandi.Text = "Tamamlandı";
+            this.btnTamamlandi.UseVisualStyleBackColor = false;
+            this.btnTamamlandi.Click += new System.EventHandler(this.btnTamamlandi_Click);
             // 
-            // button2
+            // btnGorevSil
             // 
-            this.button2.BackColor = System.Drawing.Color.Red;
-            this.button2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(12, 335);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(148, 40);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Görev Sil";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnGorevSil.BackColor = System.Drawing.Color.Red;
+            this.btnGorevSil.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGorevSil.ForeColor = System.Drawing.Color.White;
+            this.btnGorevSil.Location = new System.Drawing.Point(12, 335);
+            this.btnGorevSil.Name = "btnGorevSil";
+            this.btnGorevSil.Size = new System.Drawing.Size(148, 40);
+            this.btnGorevSil.TabIndex = 3;
+            this.btnGorevSil.Text = "Görev Sil";
+            this.btnGorevSil.UseVisualStyleBackColor = false;
+            this.btnGorevSil.Click += new System.EventHandler(this.btnGorevSil_Click);
             // 
-            // button1
+            // btnGorevEkle
             // 
-            this.button1.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.button1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 274);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 40);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Görev Ekle";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnGorevEkle.BackColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnGorevEkle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnGorevEkle.ForeColor = System.Drawing.Color.White;
+            this.btnGorevEkle.Location = new System.Drawing.Point(12, 274);
+            this.btnGorevEkle.Name = "btnGorevEkle";
+            this.btnGorevEkle.Size = new System.Drawing.Size(148, 40);
+            this.btnGorevEkle.TabIndex = 2;
+            this.btnGorevEkle.Text = "Görev Ekle";
+            this.btnGorevEkle.UseVisualStyleBackColor = false;
+            this.btnGorevEkle.Click += new System.EventHandler(this.btnGorevEkle_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.button7);
-            this.panel2.Controls.Add(this.button6);
+            this.panel2.Controls.Add(this.txtMetin);
+            this.panel2.Controls.Add(this.txtSaat);
+            this.panel2.Controls.Add(this.txtTarih);
+            this.panel2.Controls.Add(this.bntSifirla);
+            this.panel2.Controls.Add(this.btnAlarmKur);
             this.panel2.Controls.Add(this.label10);
             this.panel2.Controls.Add(this.label9);
             this.panel2.Controls.Add(this.label8);
-            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.lblAlarmKur);
             this.panel2.Location = new System.Drawing.Point(0, 69);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(558, 268);
             this.panel2.TabIndex = 8;
             // 
-            // textBox3
+            // txtMetin
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox3.Location = new System.Drawing.Point(205, 174);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(179, 34);
-            this.textBox3.TabIndex = 29;
-            this.textBox3.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
+            this.txtMetin.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtMetin.Location = new System.Drawing.Point(205, 174);
+            this.txtMetin.Name = "txtMetin";
+            this.txtMetin.Size = new System.Drawing.Size(179, 34);
+            this.txtMetin.TabIndex = 29;
+            this.txtMetin.TextChanged += new System.EventHandler(this.txtMetin_TextChanged);
             // 
-            // textBox2
+            // txtSaat
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox2.Location = new System.Drawing.Point(205, 135);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(179, 34);
-            this.textBox2.TabIndex = 28;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.txtSaat.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtSaat.Location = new System.Drawing.Point(205, 135);
+            this.txtSaat.Name = "txtSaat";
+            this.txtSaat.Size = new System.Drawing.Size(179, 34);
+            this.txtSaat.TabIndex = 28;
+            this.txtSaat.TextChanged += new System.EventHandler(this.txtSaat_TextChanged);
             // 
-            // textBox1
+            // txtTarih
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.Location = new System.Drawing.Point(205, 96);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(179, 34);
-            this.textBox1.TabIndex = 27;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.txtTarih.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.txtTarih.Location = new System.Drawing.Point(205, 96);
+            this.txtTarih.Name = "txtTarih";
+            this.txtTarih.Size = new System.Drawing.Size(179, 34);
+            this.txtTarih.TabIndex = 27;
+            this.txtTarih.TextChanged += new System.EventHandler(this.txtTarih_TextChanged);
             // 
-            // button7
+            // bntSifirla
             // 
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button7.Location = new System.Drawing.Point(410, 174);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(123, 63);
-            this.button7.TabIndex = 25;
-            this.button7.Text = "Sıfırla";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.bntSifirla.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.bntSifirla.Location = new System.Drawing.Point(410, 174);
+            this.bntSifirla.Name = "bntSifirla";
+            this.bntSifirla.Size = new System.Drawing.Size(123, 63);
+            this.bntSifirla.TabIndex = 25;
+            this.bntSifirla.Text = "Sıfırla";
+            this.bntSifirla.UseVisualStyleBackColor = true;
+            this.bntSifirla.Click += new System.EventHandler(this.btnSifirla_Click);
             // 
-            // button6
+            // btnAlarmKur
             // 
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button6.Location = new System.Drawing.Point(410, 67);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(123, 63);
-            this.button6.TabIndex = 24;
-            this.button6.Text = "Kur";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.btnAlarmKur.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnAlarmKur.Location = new System.Drawing.Point(410, 67);
+            this.btnAlarmKur.Name = "btnAlarmKur";
+            this.btnAlarmKur.Size = new System.Drawing.Size(123, 63);
+            this.btnAlarmKur.TabIndex = 24;
+            this.btnAlarmKur.Text = "Kur";
+            this.btnAlarmKur.UseVisualStyleBackColor = true;
+            this.btnAlarmKur.Click += new System.EventHandler(this.btnAlarmKur_Click);
             // 
             // label10
             // 
@@ -388,17 +389,18 @@
             this.label8.TabIndex = 18;
             this.label8.Text = "Tarih:";
             // 
-            // label6
+            // lblAlarmKur
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(7, 14);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(206, 45);
-            this.label6.TabIndex = 17;
-            this.label6.Text = "Alarm Kur";
+            this.lblAlarmKur.AutoSize = true;
+            this.lblAlarmKur.BackColor = System.Drawing.Color.Transparent;
+            this.lblAlarmKur.Font = new System.Drawing.Font("Tahoma", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.lblAlarmKur.ForeColor = System.Drawing.Color.Black;
+            this.lblAlarmKur.Location = new System.Drawing.Point(7, 14);
+            this.lblAlarmKur.Name = "lblAlarmKur";
+            this.lblAlarmKur.Size = new System.Drawing.Size(206, 45);
+            this.lblAlarmKur.TabIndex = 17;
+            this.lblAlarmKur.Text = "Alarm Kur";
+            this.lblAlarmKur.Click += new System.EventHandler(this.lblAlarmKur_Click);
             // 
             // panel3
             // 
@@ -415,10 +417,10 @@
             // 
             this.notepad.Dock = System.Windows.Forms.DockStyle.Fill;
             this.notepad.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.notepad.Location = new System.Drawing.Point(0, 30);
+            this.notepad.Location = new System.Drawing.Point(0, 28);
             this.notepad.Name = "notepad";
             this.notepad.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.notepad.Size = new System.Drawing.Size(736, 696);
+            this.notepad.Size = new System.Drawing.Size(736, 698);
             this.notepad.TabIndex = 1;
             this.notepad.Text = "";
             this.notepad.TextChanged += new System.EventHandler(this.notepad_TextChanged_1);
@@ -432,7 +434,7 @@
             this.formatToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(736, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(736, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -446,7 +448,7 @@
             this.yazdırToolStripMenuItem,
             this.çıkışToolStripMenuItem});
             this.dosyaToolStripMenuItem.Name = "dosyaToolStripMenuItem";
-            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(64, 26);
+            this.dosyaToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
             this.dosyaToolStripMenuItem.Text = "Dosya";
             // 
             // yeniToolStripMenuItem
@@ -503,7 +505,7 @@
             this.silToolStripMenuItem,
             this.tümünüSilToolStripMenuItem1});
             this.düzenToolStripMenuItem.Name = "düzenToolStripMenuItem";
-            this.düzenToolStripMenuItem.Size = new System.Drawing.Size(65, 26);
+            this.düzenToolStripMenuItem.Size = new System.Drawing.Size(65, 24);
             this.düzenToolStripMenuItem.Text = "Düzen";
             this.düzenToolStripMenuItem.Click += new System.EventHandler(this.düzenToolStripMenuItem_Click);
             // 
@@ -568,7 +570,7 @@
             this.formatToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.yazıFontuToolStripMenuItem});
             this.formatToolStripMenuItem.Name = "formatToolStripMenuItem";
-            this.formatToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.formatToolStripMenuItem.Size = new System.Drawing.Size(84, 24);
             this.formatToolStripMenuItem.Text = "Görünüm";
             this.formatToolStripMenuItem.Click += new System.EventHandler(this.formatToolStripMenuItem_Click);
             // 
@@ -592,43 +594,43 @@
             // 
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
-            // listBox3
+            // listBoxHistory
             // 
-            this.listBox3.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.listBox3.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.listBox3.FormattingEnabled = true;
-            this.listBox3.ItemHeight = 28;
-            this.listBox3.Location = new System.Drawing.Point(1288, 68);
-            this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(236, 620);
-            this.listBox3.TabIndex = 10;
-            this.listBox3.SelectedIndexChanged += new System.EventHandler(this.listBox3_SelectedIndexChanged);
+            this.listBoxHistory.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.listBoxHistory.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.listBoxHistory.FormattingEnabled = true;
+            this.listBoxHistory.ItemHeight = 28;
+            this.listBoxHistory.Location = new System.Drawing.Point(1288, 68);
+            this.listBoxHistory.Name = "listBoxHistory";
+            this.listBoxHistory.Size = new System.Drawing.Size(236, 620);
+            this.listBoxHistory.TabIndex = 10;
+            this.listBoxHistory.SelectedIndexChanged += new System.EventHandler(this.listBoxHistory_SelectedIndexChanged);
             // 
-            // button9
+            // btnTumTemizle
             // 
-            this.button9.BackColor = System.Drawing.Color.OrangeRed;
-            this.button9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(1306, 744);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(208, 40);
-            this.button9.TabIndex = 17;
-            this.button9.Text = "Tümünü Temizle";
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.btnTumTemizle.BackColor = System.Drawing.Color.OrangeRed;
+            this.btnTumTemizle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTumTemizle.ForeColor = System.Drawing.Color.White;
+            this.btnTumTemizle.Location = new System.Drawing.Point(1306, 744);
+            this.btnTumTemizle.Name = "btnTumTemizle";
+            this.btnTumTemizle.Size = new System.Drawing.Size(208, 40);
+            this.btnTumTemizle.TabIndex = 17;
+            this.btnTumTemizle.Text = "Tümünü Temizle";
+            this.btnTumTemizle.UseVisualStyleBackColor = false;
+            this.btnTumTemizle.Click += new System.EventHandler(this.btnTumTemizle_Click);
             // 
-            // button8
+            // btnTemizle
             // 
-            this.button8.BackColor = System.Drawing.Color.MediumAquamarine;
-            this.button8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(1306, 689);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(208, 40);
-            this.button8.TabIndex = 18;
-            this.button8.Text = "Temizle";
-            this.button8.UseVisualStyleBackColor = false;
-            this.button8.Click += new System.EventHandler(this.button8_Click_1);
+            this.btnTemizle.BackColor = System.Drawing.Color.MediumAquamarine;
+            this.btnTemizle.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.btnTemizle.ForeColor = System.Drawing.Color.White;
+            this.btnTemizle.Location = new System.Drawing.Point(1306, 689);
+            this.btnTemizle.Name = "btnTemizle";
+            this.btnTemizle.Size = new System.Drawing.Size(208, 40);
+            this.btnTemizle.TabIndex = 18;
+            this.btnTemizle.Text = "Temizle";
+            this.btnTemizle.UseVisualStyleBackColor = false;
+            this.btnTemizle.Click += new System.EventHandler(this.btnTemizle_Click_1);
             // 
             // Form1
             // 
@@ -637,13 +639,13 @@
             this.BackColor = System.Drawing.Color.IndianRed;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1526, 853);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.listBox3);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.btnTemizle);
+            this.Controls.Add(this.listBoxHistory);
+            this.Controls.Add(this.btnTumTemizle);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label7);
+            this.Controls.Add(this.lblDateTime);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.HelpButton = true;
@@ -671,17 +673,17 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer timer1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblDateTime;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnTamamlandi;
+        private System.Windows.Forms.Button btnGorevSil;
+        private System.Windows.Forms.Button btnGorevEkle;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.Button btnSifirla;
+        private System.Windows.Forms.Button btnGeriAl;
+        private System.Windows.Forms.RichTextBox txtGörevEkle;
+        private System.Windows.Forms.ListBox listTamanlanan;
+        private System.Windows.Forms.ListBox listEklenen;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -705,7 +707,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.FontDialog fontDialog1;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblAlarmKur;
         private System.Windows.Forms.ToolStripMenuItem geriAlToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem kopyalaToolStripMenuItem;
@@ -715,15 +717,15 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button bntSifirla;
+        private System.Windows.Forms.Button btnAlarmKur;
         private System.Windows.Forms.Timer timer2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ListBox listBox3;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.TextBox txtMetin;
+        private System.Windows.Forms.TextBox txtSaat;
+        private System.Windows.Forms.TextBox txtTarih;
+        private System.Windows.Forms.ListBox listBoxHistory;
+        private System.Windows.Forms.Button btnTumTemizle;
+        private System.Windows.Forms.Button btnTemizle;
     }
 }
 

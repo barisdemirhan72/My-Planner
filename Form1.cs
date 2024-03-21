@@ -27,7 +27,7 @@ namespace My_Planner
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = true;
-            label7.Text = DateTime.Now.ToString();
+            lblDateTime.Text = DateTime.Now.ToString();
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -37,8 +37,8 @@ namespace My_Planner
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            textBox1.Text = DateTime.Now.ToShortDateString();
-            textBox2.Text = DateTime.Now.ToShortTimeString();
+            txtTarih.Text = DateTime.Now.ToShortDateString();
+            txtSaat.Text = DateTime.Now.ToShortTimeString();
 
         }
 
@@ -104,12 +104,12 @@ namespace My_Planner
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnGorevEkle_Click(object sender, EventArgs e)
         {
-            if (richTextBox1.Text != "")
+            if (txtGörevEkle.Text != "")
             {
-                listBox1.Items.Add(richTextBox1.Text);
-                listBox3.Items.Add("Yeni Görev Eklendi");
+                listEklenen.Items.Add(txtGörevEkle.Text);
+                listBoxHistory.Items.Add("Yeni Görev Eklendi");
             }
             else
             {
@@ -132,41 +132,41 @@ namespace My_Planner
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void btnSifirla_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Clear();
-            listBox2.Items.Clear();
+            listEklenen.Items.Clear();
+            listTamanlanan.Items.Clear();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void btnTamamlandi_Click(object sender, EventArgs e)
         {
-            listBox2.Items.Add(listBox1.Text);
-            listBox1.Items.Remove(listBox1.SelectedItem);
-            listBox3.Items.Add("Görev Tamamlandı");
+            listTamanlanan.Items.Add(listEklenen.Text);
+            listEklenen.Items.Remove(listEklenen.SelectedItem);
+            listBoxHistory.Items.Add("Görev Tamamlandı");
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void btnGeriAl_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Add(listBox2.Text);
-            listBox2.Items.Remove(listBox2.SelectedItem);
+            listEklenen.Items.Add(listTamanlanan.Text);
+            listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
             
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnGorevSil_Click(object sender, EventArgs e)
         {
-            listBox1.Items.Remove(listBox1.SelectedItem);
-            listBox2.Items.Remove(listBox2.SelectedItem);
-            listBox3.Items.Add("Görev Silindi");
+            listEklenen.Items.Remove(listEklenen.SelectedItem);
+            listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
+            listBoxHistory.Items.Add("Görev Silindi");
         }
 
-        private void listBox1_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void listEklenen_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            listBox1.HorizontalScrollbar = true;
+            listEklenen.HorizontalScrollbar = true;
         }
 
-        private void listBox2_SelectedIndexChanged_1(object sender, EventArgs e)
+        private void listTamamlanan_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            listBox2.HorizontalScrollbar = true;
+            listTamanlanan.HorizontalScrollbar = true;
         }
 
         private void yeniToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -240,7 +240,7 @@ namespace My_Planner
 
                 }
             }
-            listBox3.Items.Add("Not Kaydedildi");
+            listBoxHistory.Items.Add("Not Kaydedildi");
         }
 
         private void openFileDialog1_FileOk(object sender, CancelEventArgs e)
@@ -332,13 +332,13 @@ namespace My_Planner
             notepad.Clear();
         }
 
-        private void button6_Click(object sender, EventArgs e)
+        private void btnAlarmKur_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text != "" || textBox2.Text != "")
+            if (txtTarih.Text != "" || txtSaat.Text != "")
             {
-                alarmlar.Add(textBox1.Text + textBox2.Text + "#" + textBox3.Text);
+                alarmlar.Add(txtTarih.Text + txtSaat.Text + "#" + txtMetin.Text);
                 timer2.Start();
-                listBox3.Items.Add("Alarm Kuruldu");
+                listBoxHistory.Items.Add("Alarm Kuruldu");
             }
             else
             {
@@ -383,7 +383,7 @@ namespace My_Planner
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void txtTarih_TextChanged(object sender, EventArgs e)
         {
 
         }
@@ -393,13 +393,13 @@ namespace My_Planner
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
             timer2.Stop();
             alarmlar.Clear();
-            textBox1.Clear();
-            textBox2.Clear();
-            textBox3.Clear();   
+            txtTarih.Clear();
+            txtSaat.Clear();
+            txtMetin.Clear();   
         }
 
         private void formatToolStripMenuItem_Click(object sender, EventArgs e)
@@ -438,41 +438,51 @@ namespace My_Planner
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+        private void txtSaat_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void listBox3_SelectedIndexChanged(object sender, EventArgs e)
+        private void listBoxHistory_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
         private void button8_Click(object sender, EventArgs e)
         {
-            listBox3.Items.Clear();
+            listBoxHistory.Items.Clear();
 
         }
 
-        private void button9_Click(object sender, EventArgs e)
+        private void btnTumTemizle_Click(object sender, EventArgs e)
         {
-            listBox3.Items.Clear();
+            listBoxHistory.Items.Clear();
 
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void richTextBox1_TextChanged_3(object sender, EventArgs e)
+        private void txtMetin_TextChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void button8_Click_1(object sender, EventArgs e)
+        private void txtGörevEkle_TextChanged_3(object sender, EventArgs e)
         {
-            listBox3.Items.Remove(listBox3.SelectedItem);
+
+        }
+
+        private void btnTemizle_Click_1(object sender, EventArgs e)
+        {
+            listBoxHistory.Items.Remove(listBoxHistory.SelectedItem);
+        }
+
+        private void lblDateTime_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAlarmKur_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

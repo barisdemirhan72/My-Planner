@@ -192,5 +192,10 @@ namespace My_Planner
         {
            
         }
+
+        private void dosyaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -140,23 +140,45 @@ namespace My_Planner
 
         private void btnTamamlandi_Click(object sender, EventArgs e)
         {
-            listTamanlanan.Items.Add(listEklenen.Text);
-            listEklenen.Items.Remove(listEklenen.SelectedItem);
-            listBoxHistory.Items.Add("Görev Tamamlandı");
+            if (listEklenen.Text != "")
+            {
+                listTamanlanan.Items.Add(listEklenen.Text);
+                listEklenen.Items.Remove(listEklenen.SelectedItem);
+                listBoxHistory.Items.Add("Görev Tamamlandı");
+            }
+            else
+            {
+                MessageBox.Show("Görev Kutusu Boş!!");
+            }
         }
 
         private void btnGeriAl_Click(object sender, EventArgs e)
         {
-            listEklenen.Items.Add(listTamanlanan.Text);
-            listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
+            if(listTamanlanan.Text != "")
+            {
+                listEklenen.Items.Add(listTamanlanan.Text);
+                listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
+            }
+            else
+            {
+                MessageBox.Show("Tamamlanan görev yok!");
+            }
+            
             
         }
 
         private void btnGorevSil_Click(object sender, EventArgs e)
         {
-            listEklenen.Items.Remove(listEklenen.SelectedItem);
-            listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
-            listBoxHistory.Items.Add("Görev Silindi");
+            if (listEklenen.Text != "")
+            {
+                listEklenen.Items.Remove(listEklenen.SelectedItem);
+                listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
+                listBoxHistory.Items.Add("Görev Silindi");
+            }
+            else
+            {
+                MessageBox.Show("Görev Kutusu Boş!!");
+            }
         }
 
         private void listEklenen_SelectedIndexChanged_1(object sender, EventArgs e)

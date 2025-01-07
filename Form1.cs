@@ -22,23 +22,34 @@ namespace My_Planner
         }
 
         private string file = "";
-        
-        
+
+        private string dataFilePath = "listbox_data.txt";
+
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Enabled = true;
             lblDateTime.Text = DateTime.Now.ToString();
         }
 
-        private void label4_Click(object sender, EventArgs e)
+        private void lblTamamlananlar_Click(object sender, EventArgs e)
         {
 
         }
-
+        private void LoadData()
+        {
+            if (File.Exists(dataFilePath))
+            {
+                var lines = File.ReadAllLines(dataFilePath);
+                listEklenen.Items.AddRange(lines);
+            }
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
             txtTarih.Text = DateTime.Now.ToShortDateString();
             txtSaat.Text = DateTime.Now.ToShortTimeString();
+
+            LoadData();
 
         }
 
@@ -94,7 +105,7 @@ namespace My_Planner
          
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void lblYapilacaklarListesi_Click(object sender, EventArgs e)
         {
 
         }
@@ -110,6 +121,7 @@ namespace My_Planner
             {
                 listEklenen.Items.Add(txtGörevEkle.Text);
                 listBoxHistory.Items.Add("Yeni Görev Eklendi");
+                SaveData();
             }
             else
             {
@@ -136,6 +148,13 @@ namespace My_Planner
         {
             listEklenen.Items.Clear();
             listTamanlanan.Items.Clear();
+
+            if (File.Exists(dataFilePath))
+            {
+                File.Delete(dataFilePath);
+            }
+            listBoxHistory.Items.Add("Tüm görevler temizlendi.");
+
         }
 
         private void btnTamamlandi_Click(object sender, EventArgs e)
@@ -144,6 +163,7 @@ namespace My_Planner
             {
                 listTamanlanan.Items.Add(listEklenen.Text);
                 listEklenen.Items.Remove(listEklenen.SelectedItem);
+                SaveData();
                 listBoxHistory.Items.Add("Görev Tamamlandı");
             }
             else
@@ -173,6 +193,7 @@ namespace My_Planner
             {
                 listEklenen.Items.Remove(listEklenen.SelectedItem);
                 listTamanlanan.Items.Remove(listTamanlanan.SelectedItem);
+                SaveData();
                 listBoxHistory.Items.Add("Görev Silindi");
             }
             else
@@ -390,7 +411,7 @@ namespace My_Planner
                 {
                     alarmlar.Remove(alarm);
                     SoundPlayer ses = new SoundPlayer();
-                    string dizin = Application.StartupPath + "\\dinazor ve kurbağa.wav";
+                    string dizin = Application.StartupPath + "\\alarm.wav";
                     ses.SoundLocation = dizin;
                     ses.Play();
                     MessageBox.Show(words[1]);
@@ -503,6 +524,61 @@ namespace My_Planner
         }
 
         private void lblAlarmKur_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void SaveData()
+        {
+            File.WriteAllLines(dataFilePath, listEklenen.Items.Cast<string>());
+        }
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SaveData();
+        }
+
+        private void lblTarih_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblSaat_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblAlarmMetni_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAlarmSifirla_Click(object sender, EventArgs e)
+        {
+            alarmlar.Clear(); 
+            timer2.Stop(); 
+
+            txtTarih.Clear();
+            txtSaat.Clear();
+            txtMetin.Clear();
+
+            listBoxHistory.Items.Add("Tüm Alarmlar Sıfırlandı");
+        }
+
+        private void lblGorevler_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblMyPlanner_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblEklenen_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblTamamlananlar_Click_1(object sender, EventArgs e)
         {
 
         }
